@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="com.orm.SugarApp"
+    package="com.ab.smartwallet">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.ab.smartwallet.main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Minus" />
+        <activity android:name=".Plus" />
+        <activity android:name=".AddNoteActivity" />
+        <activity android:name=".MainActivity" />
+        <!-- <activity android:name=".main" /> -->
+        <activity android:name=".Note" />
+        <activity android:name=".EditNoteActivity" />
+        <activity android:name=".ShowBudget" />
+        <activity android:name=".PlusEdit" />
+        <activity android:name=".EditMinusActivity" />
+        <activity android:name=".Budget" />
+
+        <!--
+           ATTENTION: This was auto-generated to add Google Play services to your project for
+           App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="NoteDB.db|DataBase.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="3" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.ab.smartwallet" />
+
+       <activity android:name=".Taps"></activity>
+    </application>
+
+</manifest>

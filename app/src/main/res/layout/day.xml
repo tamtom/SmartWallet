@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bayan"
+    >
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:weightSum="3"
+    android:id="@+id/ll"
+    >
+    <Spinner
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dayY"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        />
+
+    <Spinner
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dayM"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        />
+
+    <Spinner
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dayD"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        />
+
+</LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ok"
+        android:id="@+id/ok"
+        android:layout_below="@+id/ll"
+        android:layout_alignParentRight="true"
+        />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/dayChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/ok"
+        />
+
+</RelativeLayout>

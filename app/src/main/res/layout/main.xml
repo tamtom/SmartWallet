@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bayan"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:id="@+id/btn1"
+        android:paddingBottom="40dp"
+        android:text="Reports"
+        android:textSize="20sp"
+        android:padding="20dp"
+        android:src="@drawable/piechart"
+        />
+
+    <ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:id="@+id/btn2"
+    android:paddingBottom="40dp"
+    android:layout_above="@+id/btn1"
+    android:text="Budget"
+    android:padding="20dp"
+    android:layout_marginBottom="50dp"
+    android:textSize="20sp"
+    android:src="@drawable/money"
+    />
+
+    <ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:id="@+id/btn3"
+    android:paddingBottom="40dp"
+    android:layout_below="@+id/btn1"
+    android:layout_marginTop="50dp"
+    android:padding="20dp"
+    android:text="Note"
+    android:textSize="20sp"
+        android:src="@drawable/notepicture"
+    />
+
+
+</RelativeLayout>

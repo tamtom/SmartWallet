@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bayan"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:textSize="25sp"
+        android:id="@+id/eCategory"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ePicture"
+        android:src="@drawable/oo"
+        android:layout_alignBottom="@+id/eAmount"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eCategory"
+        android:layout_toLeftOf="@+id/ePicture"
+        android:text="amount"
+        android:layout_alignParentLeft="true"
+        android:textSize="15sp"
+        android:id="@+id/eAmount"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@color/md_green_400"
+        android:id="@+id/edit"
+        android:layout_alignParentRight="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="delete"
+        android:layout_alignParentBottom="true"
+        android:background="@color/md_red_400"
+        android:id="@+id/delete"
+        android:layout_margin="10dp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bayan"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:layout_centerHorizontal="true"
+        android:inputType="number"
+        android:layout_marginTop="40dp"
+        android:id="@+id/editText"
+        android:hint="The amount "
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/editText"
+        android:layout_above="@+id/ab1"
+        >
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+
+        >
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:id="@+id/Salary"
+            android:checked="true"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kids"
+            android:layout_margin="5dp"
+            android:textSize="30sp"
+            android:layout_below="@+id/Salary"
+            android:id="@+id/bounus"
+            />
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Car"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/bounus"
+            android:id="@+id/Gift"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Power"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/Gift"
+            android:id="@+id/ll"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="School"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/ll"
+            android:id="@+id/l"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beverages"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/l"
+            android:id="@+id/lk"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Store"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/lk"
+            android:id="@+id/g"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gym"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/g"
+            android:id="@+id/g1"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shawerma"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/g1"
+            android:id="@+id/g2"
+            />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Others"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/Gift"
+            />
+    </RadioGroup>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/ab1"
+        />
+
+
+</RelativeLayout>
