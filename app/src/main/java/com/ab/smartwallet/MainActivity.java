@@ -4,13 +4,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.*;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -22,12 +30,26 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.orm.SugarContext;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import lecho.lib.hellocharts.model.Axis;
+import lecho.lib.hellocharts.model.AxisValue;
+import lecho.lib.hellocharts.model.Line;
+import lecho.lib.hellocharts.model.LineChartData;
+import lecho.lib.hellocharts.model.PointValue;
+import lecho.lib.hellocharts.model.ValueShape;
+import lecho.lib.hellocharts.model.Viewport;
+import lecho.lib.hellocharts.util.ChartUtils;
+import lecho.lib.hellocharts.view.LineChartView;
 
 public class MainActivity extends AppCompatActivity {
 
     BootstrapButton plus,minus ;
     TextView balance, income, outcome ;
+     ListView lv;
+
+    LineChart lineChart;
     android.support.v7.widget.Toolbar mToolbar;
     static AbAdapter  adapter;
     @Override
@@ -43,10 +65,20 @@ public class MainActivity extends AppCompatActivity {
         outcome = (TextView) findViewById(R.id.outAmount);
         balance = (TextView) findViewById(R.id.balanceAmount);
           mToolbar = (Toolbar) findViewById(R.id.appbar);
+        lineChart = (LineChart) findViewById(R.id.chart);
+        lv = (ListView) findViewById(R.id.lcat);
+        lv.setAdapter(new AbAdapter(DataBase.listAll(DataBase.class),this));
+        calcAmount();
+
+
+
+
+
         setSupportActionBar(mToolbar);
+        generateChart();
 //        YoYo.with(Techniques.Tada).playOn(textView);
 
-        calcAmount();
+
 /*
 //list adapter
         adapter = new AbAdapter(DataBase.listAll(DataBase.class),MainActivity.this);
@@ -149,6 +181,33 @@ public class MainActivity extends AppCompatActivity {
             return true ;
 
     }
+    private void generateChart(){
+
+        // creating list of entry
+        ArrayList<Entry> entries = new ArrayList<>();
+
+
+        List<DataBase> listdb = DataBase.listAll(DataBase.class);
+        ArrayList<String> labels = new ArrayList<String>();
+
+        for (int i=0 ; i<listdb.size() ; i++) {
+//change balance
+            entries.add(new Entry(Float.parseFloat(listdb.get(i).amount),i));
+             labels.add(listdb.get(i).date.substring(0,10));
+
+
+        }
+        LineDataSet dataset = new LineDataSet(entries, "Balance");
+        LineData data = new LineData(labels,dataset);
+        dataset.setDrawCubic(true);
+        dataset.setColor(Color.GREEN);
+
+        lineChart.animateY(2000);
+        lineChart.setData(data);
+
+
+
+    }
 
 //to calculate the amount that store in the data base
     private void calcAmount () {
@@ -169,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
         income.setText(in+"");
         outcome.setText(out+"");
     }
+
 
     public static AbAdapter returnAdapter () {
         return adapter;

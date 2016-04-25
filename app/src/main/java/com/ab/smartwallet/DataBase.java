@@ -12,7 +12,7 @@ public class DataBase extends SugarRecord {
     String category ;
     String amount ;
     String plusOrMinus ;
-
+    int balance;
     public DataBase () {
 
     }
@@ -22,5 +22,6 @@ public DataBase (String date, String category,String amount,String plusOrMinus){
         this.amount = amount;
         this.category = category;
         this.plusOrMinus = plusOrMinus;
+
     }
 }

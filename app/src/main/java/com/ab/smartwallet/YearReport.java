@@ -34,7 +34,7 @@ public class YearReport extends Fragment {
     Button ok;
     Spinner year;
     int incomeSum , outcomeSum;
-
+//
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
